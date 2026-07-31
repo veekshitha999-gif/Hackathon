@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGame } from '../../context/GameContext';
 import { soundEffects } from '../../utils/soundEffects';
-import { Play, Users, Lock, Unlock, Copy, UserX, ShieldCheck, Link, Sparkles } from 'lucide-react';
+import { Play, Users, Lock, Unlock, Copy, UserX, ShieldCheck, Link, Edit3, Check } from 'lucide-react';
 
 export function HostLobby() {
   const { hostRoomState, socket, setActiveView } = useGame();
+  
+  // Resolve default base URL: if localhost, fallback to network IP or user custom tunnel URL
+  const defaultBaseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? `http://${window.location.hostname === 'localhost' ? '10.173.101.180' : window.location.hostname}:3000`
+    : window.location.origin;
+
+  const [customBaseUrl, setCustomBaseUrl] = useState(defaultBaseUrl);
+  const [isEditingUrl, setIsEditingUrl] = useState(false);
 
   if (!hostRoomState) {
     return (
@@ -16,7 +24,10 @@ export function HostLobby() {
   }
 
   const { code, quizTitle, players = [], isLocked, settings } = hostRoomState;
-  const inviteLink = `${window.location.origin}?room=${code}`;
+  
+  // Format full invite link
+  const cleanBase = customBaseUrl.replace(/\/+$/, '');
+  const inviteLink = `${cleanBase}?room=${code}`;
 
   const copyCode = () => {
     soundEffects.playClick();
@@ -27,7 +38,7 @@ export function HostLobby() {
   const copyLink = () => {
     soundEffects.playClick();
     navigator.clipboard.writeText(inviteLink);
-    alert(`Invite Link copied: ${inviteLink}\nSend this link to anyone on WhatsApp/Discord/Email to join!`);
+    alert(`Invite Link copied: ${inviteLink}\nSend this link to anyone on phones/laptops to join!`);
   };
 
   const handleToggleLock = () => {
@@ -73,14 +84,33 @@ export function HostLobby() {
         </button>
       </div>
 
-      {/* Prominent Shareable Invite Link Bar */}
+      {/* Shareable Invite Link Bar */}
       <div className="glass-panel-glow p-6 sm:p-8 rounded-3xl border border-purple-500/50 flex flex-col gap-4 shadow-2xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-purple-300">
-            <Link className="w-4 h-4 text-pink-400" /> Shareable Participant Join Link
+            <Link className="w-4 h-4 text-pink-400" /> Shareable Participant Join Link (For Mobile Phones & Laptops)
           </div>
-          <span className="text-xs font-bold text-gray-400">Click button to copy & send via WhatsApp/Discord</span>
+          <button
+            onClick={() => setIsEditingUrl(!isEditingUrl)}
+            className="text-xs font-bold text-purple-300 hover:text-white flex items-center gap-1 bg-white/10 px-3 py-1 rounded-lg border border-white/10"
+          >
+            {isEditingUrl ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Edit3 className="w-3.5 h-3.5" />}
+            {isEditingUrl ? 'Done Editing URL' : 'Change Tunnel/Public URL'}
+          </button>
         </div>
+
+        {isEditingUrl && (
+          <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/30 text-xs text-purple-200">
+            <strong>Host URL Config:</strong> If hosting via Pinggy or custom tunnel, paste your domain below (e.g. <code>https://dkfmh-103-87-93-34.run.pinggy-free.link</code>):
+            <input
+              type="text"
+              value={customBaseUrl}
+              onChange={(e) => setCustomBaseUrl(e.target.value)}
+              placeholder="e.g. https://dkfmh-103-87-93-34.run.pinggy-free.link"
+              className="w-full mt-2 px-3 py-2 rounded-lg bg-black/50 border border-purple-400/50 text-white font-mono text-xs focus:outline-none"
+            />
+          </div>
+        )}
 
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <input
