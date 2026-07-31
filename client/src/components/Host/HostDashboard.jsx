@@ -95,11 +95,12 @@ export function HostDashboard() {
     reader.readAsText(file);
   };
 
-  const handleLaunchLobby = (quizId) => {
+  const handleLaunchLobby = (quiz) => {
     soundEffects.playClick();
     if (socket) {
       socket.emit('room:create', {
-        quizId,
+        quizId: quiz.id,
+        quiz: quiz,
         settings: {
           timerMultiplier: 1.0,
           shuffleQuestions: false,
@@ -110,12 +111,14 @@ export function HostDashboard() {
           lateJoin: true
         }
       }, (res) => {
-        if (res.success) {
+        if (res && res.success) {
           setActiveView('HOST_LOBBY');
         } else {
-          alert(res.message || 'Failed to launch lobby');
+          alert((res && res.message) || 'Failed to launch lobby');
         }
       });
+    } else {
+      alert('Socket connection is connecting... Please try in a second.');
     }
   };
 
@@ -227,7 +230,7 @@ export function HostDashboard() {
               </button>
 
               <button
-                onClick={() => handleLaunchLobby(quiz.id)}
+                onClick={() => handleLaunchLobby(quiz)}
                 className="ml-auto px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-sm shadow-md shadow-emerald-500/20 flex items-center gap-1.5 active:scale-95 transition-transform"
               >
                 <Play className="w-4 h-4 fill-white" /> Host Game

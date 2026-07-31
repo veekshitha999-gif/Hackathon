@@ -182,10 +182,11 @@ io.on('connection', (socket) => {
   });
 
   // Room Creation (Host)
-  socket.on('room:create', ({ quizId, settings, hostUser }, callback) => {
+  socket.on('room:create', ({ quizId, quiz: clientQuiz, settings, hostUser }, callback) => {
     try {
-      const quiz = quizStore.getById(quizId);
-      if (!quiz) throw new Error('Quiz not found.');
+      let quiz = (quizId ? quizStore.getById(quizId) : null) || clientQuiz;
+      if (!quiz && clientQuiz) quiz = clientQuiz;
+      if (!quiz) throw new Error('Quiz data not found.');
 
       const room = roomManager.createRoom({
         hostSocketId: socket.id,
