@@ -297,6 +297,9 @@ export function GameProvider({ children }) {
 
     newSocket.on('player-room-update', (state) => {
       setPlayerRoomState(state);
+      if (state && state.state && state.state !== 'LOBBY') {
+        setActiveView('PLAYER_GAME');
+      }
     });
 
     newSocket.on('timer-tick', ({ seconds }) => {

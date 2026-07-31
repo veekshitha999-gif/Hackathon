@@ -106,6 +106,11 @@ function MainContent() {
     case 'PLAYER_JOIN':
       return <JoinRoom />;
     case 'PLAYER_LOBBY':
+      if (playerRoomState && playerRoomState.state !== 'LOBBY') {
+        return (playerRoomState.state === 'REVEAL' || playerRoomState.state === 'LEADERBOARD')
+          ? <PlayerScoreView />
+          : <PlayerQuestionView />;
+      }
       return <PlayerLobby />;
     case 'PLAYER_GAME':
       return (playerRoomState && (playerRoomState.state === 'REVEAL' || playerRoomState.state === 'LEADERBOARD')) 
