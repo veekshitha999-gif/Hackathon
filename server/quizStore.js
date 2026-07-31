@@ -1,5 +1,5 @@
 /**
- * In-Memory Quiz Storage & 10 Comprehensive Default Quizzes
+ * In-Memory Quiz Storage & 12 Comprehensive Default Quizzes
  */
 
 export const defaultQuizzes = [
@@ -256,10 +256,57 @@ export const defaultQuizzes = [
       {
         id: 'q10-1',
         type: 'multiple_choice',
-        question: 'If a electric train is traveling south at 60 mph, which way does the smoke blow?',
+        question: 'If an electric train is traveling south at 60 mph, which way does the smoke blow?',
         options: ['North', 'South', 'West', 'Electric trains have no smoke!'],
         correctAnswer: 3,
         timeLimit: 20,
+        points: 1000
+      }
+    ]
+  },
+  {
+    id: 'quiz-11',
+    title: '🐾 Animals & Wildlife Kingdom',
+    description: 'Fascinating animal facts, ocean marine life, and jungle wildlife.',
+    category: 'Nature',
+    coverColor: 'from-emerald-500 to-green-600',
+    createdAt: new Date().toISOString(),
+    questions: [
+      {
+        id: 'q11-1',
+        type: 'multiple_choice',
+        question: 'What is the largest living mammal on Earth?',
+        options: ['African Elephant', 'Blue Whale', 'Colossal Squid', 'Giraffe'],
+        correctAnswer: 1,
+        timeLimit: 15,
+        points: 1000
+      },
+      {
+        id: 'q11-2',
+        type: 'true_false',
+        question: 'Flamingos are naturally born pink.',
+        options: ['True', 'False'],
+        correctAnswer: 1,
+        timeLimit: 15,
+        points: 1000
+      }
+    ]
+  },
+  {
+    id: 'quiz-12',
+    title: '🚗 Supercars, Automotive & Speed Tech',
+    description: 'Hypercars, EV technology, Formula 1 engines, and automotive legends.',
+    category: 'Automotive',
+    coverColor: 'from-rose-600 to-red-700',
+    createdAt: new Date().toISOString(),
+    questions: [
+      {
+        id: 'q12-1',
+        type: 'multiple_choice',
+        question: 'Which luxury supercar manufacturer features a prancing horse logo?',
+        options: ['Lamborghini', 'Porsche', 'Ferrari', 'Bugatti'],
+        correctAnswer: 2,
+        timeLimit: 15,
         points: 1000
       }
     ]
