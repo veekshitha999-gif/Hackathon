@@ -238,17 +238,9 @@ export function HostGameControl() {
         </div>
       ) : (
         <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col gap-6">
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
-            <div>
-              <h3 className="text-2xl font-black text-white">Current Standings</h3>
-              <p className="text-xs text-gray-400">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
-            </div>
-            <button
-              onClick={handleNext}
-              className="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-base shadow-xl shadow-emerald-500/30 flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
-            >
-              {currentQuestionIndex + 1 < totalQuestions ? 'NEXT QUESTION →' : 'VIEW FINAL PODIUM 🏆'} <SkipForward className="w-5 h-5" />
-            </button>
+          <div className="border-b border-white/10 pb-4">
+            <h3 className="text-2xl font-black text-white">Current Standings</h3>
+            <p className="text-xs text-gray-400">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
           </div>
           <LeaderboardTable rankings={players} showFull={true} />
         </div>
