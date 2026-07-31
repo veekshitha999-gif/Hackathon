@@ -7,6 +7,7 @@
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
     "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "share": "concurrently \"npm:dev:server\" \"npm:dev:client\" \"npx -y localtunnel --port 3000\"",
     "build": "npm --prefix client run build",
     "start": "npm --prefix server start"
   },
