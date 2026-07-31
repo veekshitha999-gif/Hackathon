@@ -281,7 +281,11 @@ export function HostGameControl() {
             onClick={handleNext}
             className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-base shadow-lg shadow-emerald-500/30 flex items-center gap-2 active:scale-95 transition-transform"
           >
-            Next <SkipForward className="w-5 h-5" />
+            {state === 'QUESTION' && 'Reveal Answer'}
+            {state === 'REVEAL' && 'View Scoreboard'}
+            {state === 'LEADERBOARD' && 'Next Question'}
+            {state !== 'QUESTION' && state !== 'REVEAL' && state !== 'LEADERBOARD' && 'Next'}
+            <SkipForward className="w-5 h-5" />
           </button>
         </div>
       </div>

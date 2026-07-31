@@ -265,6 +265,17 @@ io.on('connection', (socket) => {
     const room = roomManager.getRoom(roomCode);
     if (!room) return;
 
+    if (room.timerInterval) {
+      clearInterval(room.timerInterval);
+      room.timerInterval = null;
+    }
+
+    if (room.state === 'QUESTION') {
+      room.state = 'REVEAL';
+      broadcastRoomState(roomCode);
+      return;
+    }
+
     if (room.state === 'REVEAL' && room.settings.showLeaderboardAfterEach) {
       room.state = 'LEADERBOARD';
       broadcastRoomState(roomCode);
@@ -277,7 +288,6 @@ io.on('connection', (socket) => {
       startQuestionTimer(roomCode);
     } else {
       room.state = 'FINISHED';
-      if (room.timerInterval) clearInterval(room.timerInterval);
       broadcastRoomState(roomCode);
       io.to(`room:${roomCode}`).emit('game-finished');
     }
