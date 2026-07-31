@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGame } from '../../context/GameContext';
 import { soundEffects } from '../../utils/soundEffects';
 import { TimerBar } from '../Common/TimerBar';
@@ -6,19 +6,29 @@ import { LeaderboardTable } from '../Common/LeaderboardTable';
 import { Podium } from '../Common/Podium';
 import { ConfettiCanvas } from '../Common/ConfettiCanvas';
 import { exportToCSV, printSummaryReport } from '../../utils/exportHelper';
-import { Play, Pause, SkipForward, SkipBack, RotateCcw, Clock, BarChart2, Trophy, Download, Printer, ShieldCheck, Square, CheckSquare } from 'lucide-react';
+import { Play, Pause, SkipForward, SkipBack, RotateCcw, Clock, BarChart2, Trophy, Download, Printer, ShieldCheck } from 'lucide-react';
 
 export function HostGameControl() {
   const { hostRoomState, socket, setActiveView } = useGame();
   const [activeTab, setActiveTab] = useState('STATS'); // STATS | LEADERBOARD
   const [hostAnswer, setHostAnswer] = useState(null);
 
+  const state = hostRoomState?.state;
+
+  // Auto-switch tabs based on game state
+  useEffect(() => {
+    if (state === 'LEADERBOARD') {
+      setActiveTab('LEADERBOARD');
+    } else if (state === 'QUESTION') {
+      setActiveTab('STATS');
+    }
+  }, [state]);
+
   if (!hostRoomState) return null;
 
   const {
     code,
     quizTitle,
-    state,
     isPaused,
     currentQuestionIndex,
     totalQuestions,
@@ -30,7 +40,6 @@ export function HostGameControl() {
 
   const isFinished = state === 'FINISHED';
   const isReveal = state === 'REVEAL';
-  const isLeaderboard = state === 'LEADERBOARD';
 
   // Controls
   const handlePauseResume = () => {
@@ -228,7 +237,19 @@ export function HostGameControl() {
           )}
         </div>
       ) : (
-        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
+        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col gap-6">
+          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div>
+              <h3 className="text-2xl font-black text-white">Current Standings</h3>
+              <p className="text-xs text-gray-400">Question {currentQuestionIndex + 1} of {totalQuestions}</p>
+            </div>
+            <button
+              onClick={handleNext}
+              className="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-base shadow-xl shadow-emerald-500/30 flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
+            >
+              {currentQuestionIndex + 1 < totalQuestions ? 'NEXT QUESTION →' : 'VIEW FINAL PODIUM 🏆'} <SkipForward className="w-5 h-5" />
+            </button>
+          </div>
           <LeaderboardTable rankings={players} showFull={true} />
         </div>
       )}
@@ -283,7 +304,7 @@ export function HostGameControl() {
           >
             {state === 'QUESTION' && 'Reveal Answer'}
             {state === 'REVEAL' && 'View Scoreboard'}
-            {state === 'LEADERBOARD' && 'Next Question'}
+            {state === 'LEADERBOARD' && (currentQuestionIndex + 1 < totalQuestions ? 'Next Question' : 'View Final Podium')}
             {state !== 'QUESTION' && state !== 'REVEAL' && state !== 'LEADERBOARD' && 'Next'}
             <SkipForward className="w-5 h-5" />
           </button>

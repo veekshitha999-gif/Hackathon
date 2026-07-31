@@ -1,5 +1,5 @@
 /**
- * In-Memory Quiz Storage & 12 Comprehensive Default Quizzes (10 Questions Each)
+ * In-Memory Quiz Storage & 12 Comprehensive Default Quizzes (15 Questions Each)
  */
 
 export const defaultQuizzes = [
@@ -20,7 +20,12 @@ export const defaultQuizzes = [
       { id: 'q1-7', type: 'true_false', question: 'Sound can travel through space.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q1-8', type: 'fill_blanks', question: 'The force that pulls objects toward Earth is called ____.', acceptedAnswers: ['Gravity', 'gravity'], timeLimit: 20, points: 1000 },
       { id: 'q1-9', type: 'ordering', question: 'Order these planets from CLOSEST to FARTHEST from the Sun:', options: ['Earth', 'Mercury', 'Venus', 'Mars'], correctOrder: ['Mercury', 'Venus', 'Earth', 'Mars'], timeLimit: 30, points: 1000 },
-      { id: 'q1-10', type: 'poll', question: 'Which branch of science interests you the most?', options: ['Astrophysics', 'Quantum Mechanics', 'Biology', 'Robotics'], timeLimit: 15, points: 500 }
+      { id: 'q1-10', type: 'multiple_choice', question: 'What is the largest moon of Saturn?', options: ['Titan', 'Europa', 'Ganymede', 'Phobos'], correctAnswer: 0, timeLimit: 20, points: 1000 },
+      { id: 'q1-11', type: 'true_false', question: 'Electrons carry a positive electrical charge.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q1-12', type: 'multiple_choice', question: 'What is the hardest natural substance on Earth?', options: ['Gold', 'Iron', 'Diamond', 'Titanium'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q1-13', type: 'type_answer', question: 'Which gas do plants absorb during photosynthesis?', acceptedAnswers: ['Carbon Dioxide', 'carbon dioxide', 'CO2', 'co2'], timeLimit: 20, points: 1000 },
+      { id: 'q1-14', type: 'slider', question: 'What is the approximate age of the Universe in billions of years?', min: 5, max: 25, targetValue: 14, tolerance: 1, timeLimit: 20, points: 1000 },
+      { id: 'q1-15', type: 'poll', question: 'Which branch of science interests you the most?', options: ['Astrophysics', 'Quantum Mechanics', 'Biology', 'Robotics'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -40,7 +45,12 @@ export const defaultQuizzes = [
       { id: 'q2-7', type: 'multiple_choice', question: 'What does AI stand for in computer science?', options: ['Automated Intelligence', 'Artificial Intelligence', 'Algorithmic Interface', 'Advanced Integration'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q2-8', type: 'fill_blanks', question: 'The default package manager for Node.js is ____.', acceptedAnswers: ['npm', 'NPM', 'Npm'], timeLimit: 20, points: 1000 },
       { id: 'q2-9', type: 'multiple_select', question: 'Select ALL relational database management systems:', options: ['PostgreSQL', 'MySQL', 'Redis', 'SQLite'], correctAnswers: [0, 1, 3], timeLimit: 25, points: 1000 },
-      { id: 'q2-10', type: 'poll', question: 'What is your primary code editor of choice?', options: ['VS Code', 'JetBrains / WebStorm', 'Neovim / Vim', 'Sublime / Other'], timeLimit: 15, points: 500 }
+      { id: 'q2-10', type: 'multiple_choice', question: 'What company developed the Python programming language?', options: ['Guido van Rossum', 'Sun Microsystems', 'Bell Labs', 'IBM'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q2-11', type: 'true_false', question: 'Git and GitHub are the exact same thing.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q2-12', type: 'type_answer', question: 'What keyword in JavaScript declares a block-scoped constant variable?', acceptedAnswers: ['const', 'CONST'], timeLimit: 15, points: 1000 },
+      { id: 'q2-13', type: 'multiple_choice', question: 'What port does HTTP default to?', options: ['21', '22', '80', '443'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q2-14', type: 'fill_blanks', question: 'CSS stands for Cascading ____ Sheets.', acceptedAnswers: ['Style', 'style'], timeLimit: 15, points: 1000 },
+      { id: 'q2-15', type: 'poll', question: 'What is your primary code editor of choice?', options: ['VS Code', 'JetBrains / WebStorm', 'Neovim / Vim', 'Sublime / Other'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -60,7 +70,12 @@ export const defaultQuizzes = [
       { id: 'q3-7', type: 'multiple_select', question: 'Select ALL countries that border Canada:', options: ['United States', 'Greenland', 'Mexico', 'Russia'], correctAnswers: [0], timeLimit: 20, points: 1000 },
       { id: 'q3-8', type: 'ordering', question: 'Order these oceans from LARGEST to SMALLEST surface area:', options: ['Atlantic Ocean', 'Indian Ocean', 'Pacific Ocean', 'Arctic Ocean'], correctOrder: ['Pacific Ocean', 'Atlantic Ocean', 'Indian Ocean', 'Arctic Ocean'], timeLimit: 30, points: 1000 },
       { id: 'q3-9', type: 'true_false', question: 'The Sahara Desert is the largest desert in the world.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
-      { id: 'q3-10', type: 'poll', question: 'Which continent would you most like to visit next?', options: ['Europe', 'Asia', 'South America', 'Oceania'], timeLimit: 15, points: 500 }
+      { id: 'q3-10', type: 'multiple_choice', question: 'Which country has the largest population in the world?', options: ['China', 'India', 'United States', 'Indonesia'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q3-11', type: 'type_answer', question: 'What is the capital of Japan?', acceptedAnswers: ['Tokyo', 'tokyo'], timeLimit: 15, points: 1000 },
+      { id: 'q3-12', type: 'multiple_choice', question: 'Which landmark is located in Agra, India?', options: ['Colosseum', 'Taj Mahal', 'Machu Picchu', 'Petra'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q3-13', type: 'true_false', question: 'Iceland is covered in more ice than Greenland.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q3-14', type: 'fill_blanks', question: 'The sea located between Jordan and Israel with high salinity is the ____ Sea.', acceptedAnswers: ['Dead', 'dead'], timeLimit: 20, points: 1000 },
+      { id: 'q3-15', type: 'poll', question: 'Which continent would you most like to visit next?', options: ['Europe', 'Asia', 'South America', 'Oceania'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -80,7 +95,12 @@ export const defaultQuizzes = [
       { id: 'q4-7', type: 'fill_blanks', question: 'The famous wall built across northern Britain by Romans was ____ Wall.', acceptedAnswers: ['Hadrian', 'Hadrians', 'hadrian'], timeLimit: 20, points: 1000 },
       { id: 'q4-8', type: 'true_false', question: 'Christopher Columbus reached the Americas in 1492.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
       { id: 'q4-9', type: 'ordering', question: 'Order these events chronologically from EARLIEST to LATEST:', options: ['Fall of Constantinople', 'American Independence', 'Fall of Western Roman Empire', 'World War I'], correctOrder: ['Fall of Western Roman Empire', 'Fall of Constantinople', 'American Independence', 'World War I'], timeLimit: 30, points: 1000 },
-      { id: 'q4-10', type: 'poll', question: 'Which era of history do you find most fascinating?', options: ['Ancient World', 'Middle Ages', 'Renaissance', '20th Century'], timeLimit: 15, points: 500 }
+      { id: 'q4-10', type: 'multiple_choice', question: 'Who was the famous female pharaoh of Egypt known for her relationships with Julius Caesar and Mark Antony?', options: ['Nefertiti', 'Cleopatra', 'Hatshepsut', 'Sobekneferu'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q4-11', type: 'true_false', question: 'The Industrial Revolution began in Germany.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q4-12', type: 'type_answer', question: 'Which legendary commander conquered most of the known world before dying at age 32?', acceptedAnswers: ['Alexander the Great', 'Alexander', 'alexander'], timeLimit: 20, points: 1000 },
+      { id: 'q4-13', type: 'multiple_choice', question: 'In which city was John F. Kennedy assassinated in 1963?', options: ['Houston', 'Dallas', 'New York', 'Washington D.C.'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q4-14', type: 'slider', question: 'In what year did the Berlin Wall fall?', min: 1980, max: 1995, targetValue: 1989, tolerance: 0, timeLimit: 20, points: 1000 },
+      { id: 'q4-15', type: 'poll', question: 'Which era of history do you find most fascinating?', options: ['Ancient World', 'Middle Ages', 'Renaissance', '20th Century'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -92,15 +112,20 @@ export const defaultQuizzes = [
     createdAt: new Date().toISOString(),
     questions: [
       { id: 'q5-1', type: 'multiple_choice', question: 'Which movie won the Academy Award for Best Picture in 2024?', options: ['Barbie', 'Oppenheimer', 'Killers of the Flower Moon', 'Poor Things'], correctAnswer: 1, timeLimit: 20, points: 1000 },
-      { id: 'q5-2', type: 'poll', question: 'What is your favorite film genre?', options: ['Sci-Fi / Fantasy', 'Action / Superhero', 'Comedy', 'Thriller / Horror'], timeLimit: 15, points: 500 },
-      { id: 'q5-3', type: 'multiple_choice', question: 'Who directed the movies Titanic and Avatar?', options: ['Steven Spielberg', 'Christopher Nolan', 'James Cameron', 'Quentin Tarantino'], correctAnswer: 2, timeLimit: 15, points: 1000 },
-      { id: 'q5-4', type: 'type_answer', question: 'What is the real identity name of Marvel superhero Spider-Man?', acceptedAnswers: ['Peter Parker', 'peter parker'], timeLimit: 15, points: 1000 },
-      { id: 'q5-5', type: 'true_false', question: 'The Simpsons is the longest-running American animated TV show.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
-      { id: 'q5-6', type: 'slider', question: 'How many movies are in the original Harry Potter film series?', min: 5, max: 12, targetValue: 8, tolerance: 0, timeLimit: 15, points: 1000 },
-      { id: 'q5-7', type: 'multiple_select', question: 'Select ALL actors who played Batman in live-action feature films:', options: ['Christian Bale', 'Ben Affleck', 'Robert Pattinson', 'Tom Cruise'], correctAnswers: [0, 1, 2], timeLimit: 25, points: 1000 },
-      { id: 'q5-8', type: 'fill_blanks', question: 'The fictional kingdom where Game of Thrones takes place is ____.', acceptedAnswers: ['Westeros', 'westeros'], timeLimit: 20, points: 1000 },
-      { id: 'q5-9', type: 'ordering', question: 'Order these Marvel MCU movies by release date from EARLIEST to LATEST:', options: ['The Avengers', 'Iron Man', 'Black Panther', 'Avengers: Endgame'], correctOrder: ['Iron Man', 'The Avengers', 'Black Panther', 'Avengers: Endgame'], timeLimit: 30, points: 1000 },
-      { id: 'q5-10', type: 'multiple_choice', question: 'What color is the pill Neo chooses to take in The Matrix?', options: ['Red', 'Blue', 'Green', 'Yellow'], correctAnswer: 0, timeLimit: 15, points: 1000 }
+      { id: 'q5-2', type: 'multiple_choice', question: 'Who directed the movies Titanic and Avatar?', options: ['Steven Spielberg', 'Christopher Nolan', 'James Cameron', 'Quentin Tarantino'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q5-3', type: 'type_answer', question: 'What is the real identity name of Marvel superhero Spider-Man?', acceptedAnswers: ['Peter Parker', 'peter parker'], timeLimit: 15, points: 1000 },
+      { id: 'q5-4', type: 'true_false', question: 'The Simpsons is the longest-running American animated TV show.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-5', type: 'slider', question: 'How many movies are in the original Harry Potter film series?', min: 5, max: 12, targetValue: 8, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-6', type: 'multiple_select', question: 'Select ALL actors who played Batman in live-action feature films:', options: ['Christian Bale', 'Ben Affleck', 'Robert Pattinson', 'Tom Cruise'], correctAnswers: [0, 1, 2], timeLimit: 25, points: 1000 },
+      { id: 'q5-7', type: 'fill_blanks', question: 'The fictional kingdom where Game of Thrones takes place is ____.', acceptedAnswers: ['Westeros', 'westeros'], timeLimit: 20, points: 1000 },
+      { id: 'q5-8', type: 'ordering', question: 'Order these Marvel MCU movies by release date from EARLIEST to LATEST:', options: ['The Avengers', 'Iron Man', 'Black Panther', 'Avengers: Endgame'], correctOrder: ['Iron Man', 'The Avengers', 'Black Panther', 'Avengers: Endgame'], timeLimit: 30, points: 1000 },
+      { id: 'q5-9', type: 'multiple_choice', question: 'What color is the pill Neo chooses to take in The Matrix?', options: ['Red', 'Blue', 'Green', 'Yellow'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-10', type: 'multiple_choice', question: 'Who played iron-willed attorney Saul Goodman in Breaking Bad and Better Call Saul?', options: ['Bryan Cranston', 'Bob Odenkirk', 'Aaron Paul', 'Giancarlo Esposito'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q5-11', type: 'true_false', question: 'Walt Disney holds the record for most Academy Award nominations and wins by an individual.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-12', type: 'type_answer', question: 'What is the name of the fictional town where Stranger Things is set?', acceptedAnswers: ['Hawkins', 'hawkins'], timeLimit: 15, points: 1000 },
+      { id: 'q5-13', type: 'multiple_choice', question: 'Which movie franchise features the character Jack Sparrow?', options: ['Pirates of the Caribbean', 'Indiana Jones', 'Star Wars', 'Lord of the Rings'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-14', type: 'slider', question: 'In what year was the first Star Wars movie (Episode IV) released in theaters?', min: 1970, max: 1985, targetValue: 1977, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q5-15', type: 'poll', question: 'What is your favorite film genre?', options: ['Sci-Fi / Fantasy', 'Action / Superhero', 'Comedy', 'Thriller / Horror'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -120,7 +145,12 @@ export const defaultQuizzes = [
       { id: 'q6-7', type: 'fill_blanks', question: 'The battle royale game developed by Epic Games is ____.', acceptedAnswers: ['Fortnite', 'fortnite'], timeLimit: 20, points: 1000 },
       { id: 'q6-8', type: 'multiple_choice', question: 'What is the name of the main protagonist in the Halo series?', options: ['Marcus Fenix', 'Master Chief', 'Commander Shepard', 'Doom Slayer'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q6-9', type: 'ordering', question: 'Order these PlayStation consoles from OLDEST to NEWEST:', options: ['PS3', 'PS1', 'PS5', 'PS2'], correctOrder: ['PS1', 'PS2', 'PS3', 'PS5'], timeLimit: 30, points: 1000 },
-      { id: 'q6-10', type: 'poll', question: 'What is your preferred gaming platform?', options: ['PC', 'PlayStation', 'Xbox', 'Nintendo Switch'], timeLimit: 15, points: 500 }
+      { id: 'q6-10', type: 'multiple_choice', question: 'Which gaming engine is developed by Epic Games?', options: ['Unity', 'Unreal Engine', 'Frostbite', 'RE Engine'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q6-11', type: 'true_false', question: 'Mario was originally named Jumpman in the Arcade game Donkey Kong.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q6-12', type: 'type_answer', question: 'Which game studio developed The Witcher 3 and Cyberpunk 2077?', acceptedAnswers: ['CD Projekt Red', 'CD Projekt', 'cd projekt red'], timeLimit: 20, points: 1000 },
+      { id: 'q6-13', type: 'multiple_choice', question: 'What is the currency called in Roblox?', options: ['V-Bucks', 'Robux', 'Minecoins', 'Gems'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q6-14', type: 'slider', question: 'How many main Pokémon starters are available to choose from at the start of Gen 1?', min: 1, max: 6, targetValue: 3, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q6-15', type: 'poll', question: 'What is your preferred gaming platform?', options: ['PC', 'PlayStation', 'Xbox', 'Nintendo Switch'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -140,7 +170,12 @@ export const defaultQuizzes = [
       { id: 'q7-7', type: 'fill_blanks', question: 'The famous Swedish pop group who won Eurovision 1974 with "Waterloo" is ____.', acceptedAnswers: ['ABBA', 'Abba', 'abba'], timeLimit: 20, points: 1000 },
       { id: 'q7-8', type: 'multiple_choice', question: 'Which singer performed the halftime show at Super Bowl LVII in 2023?', options: ['Beyoncé', 'Rihanna', 'Taylor Swift', 'Lady Gaga'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q7-9', type: 'ordering', question: 'Order these music genres by general origin era from EARLIEST to LATEST:', options: ['Jazz', 'Classical', 'Hip-Hop', 'EDM / Techno'], correctOrder: ['Classical', 'Jazz', 'Hip-Hop', 'EDM / Techno'], timeLimit: 30, points: 1000 },
-      { id: 'q7-10', type: 'poll', question: 'What music genre do you stream the most?', options: ['Pop / Dance', 'Rock / Alternative', 'Hip-Hop / R&B', 'Lo-Fi / Instrumental'], timeLimit: 15, points: 500 }
+      { id: 'q7-10', type: 'multiple_choice', question: 'Who is the top most-streamed female artist on Spotify worldwide?', options: ['Ariana Grande', 'Taylor Swift', 'Billie Eilish', 'Dua Lipa'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q7-11', type: 'true_false', question: 'Elvis Presley wrote all of his own hit songs.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q7-12', type: 'type_answer', question: 'Which famous rap artist released the album "The Marshall Mathers LP"?', acceptedAnswers: ['Eminem', 'eminem'], timeLimit: 15, points: 1000 },
+      { id: 'q7-13', type: 'multiple_choice', question: 'What instrument did Wolfgang Amadeus Mozart famously play by age five?', options: ['Violin', 'Harpsichord / Piano', 'Flute', 'Cello'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q7-14', type: 'slider', question: 'How many Grammy Awards has Beyoncé won in her career?', min: 10, max: 45, targetValue: 32, tolerance: 1, timeLimit: 20, points: 1000 },
+      { id: 'q7-15', type: 'poll', question: 'What music genre do you stream the most?', options: ['Pop / Dance', 'Rock / Alternative', 'Hip-Hop / R&B', 'Lo-Fi / Instrumental'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -160,7 +195,12 @@ export const defaultQuizzes = [
       { id: 'q8-7', type: 'fill_blanks', question: 'The sport played at Lord\'s Ground in London is ____.', acceptedAnswers: ['Cricket', 'cricket'], timeLimit: 20, points: 1000 },
       { id: 'q8-8', type: 'multiple_choice', question: 'How many rings are on the official Olympic flag?', options: ['4', '5', '6', '7'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q8-9', type: 'ordering', question: 'Order these sports by ball size from SMALLEST to LARGEST:', options: ['Basketball', 'Golf ball', 'Tennis ball', 'Soccer ball'], correctOrder: ['Golf ball', 'Tennis ball', 'Soccer ball', 'Basketball'], timeLimit: 30, points: 1000 },
-      { id: 'q8-10', type: 'poll', question: 'Which major sporting event is your favorite to watch?', options: ['FIFA World Cup', 'Summer Olympics', 'NBA Finals', 'Formula 1 Grand Prix'], timeLimit: 15, points: 500 }
+      { id: 'q8-10', type: 'multiple_choice', question: 'Which NBA player has scored the most total points in league history?', options: ['Kareem Abdul-Jabbar', 'LeBron James', 'Michael Jordan', 'Kobe Bryant'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q8-11', type: 'true_false', question: 'In bowling, three consecutive strikes in a row is called a "Turkey".', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q8-12', type: 'type_answer', question: 'Which country has won the most FIFA World Cups in total (5 times)?', acceptedAnswers: ['Brazil', 'brazil'], timeLimit: 15, points: 1000 },
+      { id: 'q8-13', type: 'slider', question: 'How many total holes are played in a standard round of golf?', min: 9, max: 36, targetValue: 18, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q8-14', type: 'multiple_choice', question: 'Which Formula 1 driver holds the record for most career Grand Prix wins?', options: ['Michael Schumacher', 'Lewis Hamilton', 'Max Verstappen', 'Ayrton Senna'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q8-15', type: 'poll', question: 'Which major sporting event is your favorite to watch?', options: ['FIFA World Cup', 'Summer Olympics', 'NBA Finals', 'Formula 1 Grand Prix'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -180,7 +220,12 @@ export const defaultQuizzes = [
       { id: 'q9-7', type: 'fill_blanks', question: 'Tofu is made from coagulated ____ milk.', acceptedAnswers: ['Soy', 'soy', 'soybean'], timeLimit: 20, points: 1000 },
       { id: 'q9-8', type: 'multiple_choice', question: 'Which country originated the dessert Tiramisu?', options: ['Spain', 'France', 'Italy', 'Greece'], correctAnswer: 2, timeLimit: 15, points: 1000 },
       { id: 'q9-9', type: 'ordering', question: 'Order these chili peppers from MILD TO SPICIEST (Scoville scale):', options: ['Habanero', 'Bell Pepper', 'Jalapeño', 'Carolina Reaper'], correctOrder: ['Bell Pepper', 'Jalapeño', 'Habanero', 'Carolina Reaper'], timeLimit: 30, points: 1000 },
-      { id: 'q9-10', type: 'poll', question: 'What is your go-to international comfort cuisine?', options: ['Italian', 'Mexican', 'Japanese / Sushi', 'Indian Curry'], timeLimit: 15, points: 500 }
+      { id: 'q9-10', type: 'multiple_choice', question: 'What gives sourdough bread its distinctive tangy taste?', options: ['Lactic acid bacteria and wild yeast', 'Vinegar', 'Lemon juice', 'Baking soda'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q9-11', type: 'true_false', question: 'Tomatoes are scientifically classified as fruits, not vegetables.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q9-12', type: 'type_answer', question: 'What is the main ingredient of Hummus?', acceptedAnswers: ['Chickpeas', 'chickpeas', 'Garbanzo beans'], timeLimit: 15, points: 1000 },
+      { id: 'q9-13', type: 'multiple_choice', question: 'Which beverage is made from fermenting roasted tea leaves?', options: ['Chai', 'Matcha', 'Kombucha', 'Espresso'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q9-14', type: 'slider', question: 'How many tablespoons are in one liquid cup?', min: 4, max: 24, targetValue: 16, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q9-15', type: 'poll', question: 'What is your go-to international comfort cuisine?', options: ['Italian', 'Mexican', 'Japanese / Sushi', 'Indian Curry'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -200,7 +245,12 @@ export const defaultQuizzes = [
       { id: 'q10-7', type: 'multiple_select', question: 'Select ALL numbers that are prime numbers:', options: ['2', '9', '17', '21'], correctAnswers: [0, 2], timeLimit: 20, points: 1000 },
       { id: 'q10-8', type: 'multiple_choice', question: 'What belongs to you, but other people use it more than you do?', options: ['Your money', 'Your name', 'Your phone', 'Your car'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q10-9', type: 'ordering', question: 'Complete the Fibonacci sequence starting from 1: 1, 1, 2, 3, 5, ?', options: ['8', '13', '21', '34'], correctOrder: ['8', '13', '21', '34'], timeLimit: 30, points: 1000 },
-      { id: 'q10-10', type: 'poll', question: 'Do you prefer solving math puzzles or verbal riddles?', options: ['Math Puzzles', 'Verbal Riddles', 'Visual Puzzles', 'Both equally!'], timeLimit: 15, points: 500 }
+      { id: 'q10-10', type: 'type_answer', question: 'What goes up but never comes down?', acceptedAnswers: ['Age', 'your age', 'age'], timeLimit: 15, points: 1000 },
+      { id: 'q10-11', type: 'true_false', question: 'A penny dropped from the Empire State Building could crack the sidewalk.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q10-12', type: 'multiple_choice', question: 'Mary\'s father has 5 daughters: Nana, Nene, Nini, Nono. What is the 5th daughter\'s name?', options: ['Nunu', 'Mary', 'Nina', 'Nora'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q10-13', type: 'fill_blanks', question: 'What has a neck but no head? A ____.', acceptedAnswers: ['Bottle', 'bottle'], timeLimit: 15, points: 1000 },
+      { id: 'q10-14', type: 'slider', question: 'How many sides does a heptagon have?', min: 3, max: 12, targetValue: 7, tolerance: 0, timeLimit: 15, points: 1000 },
+      { id: 'q10-15', type: 'poll', question: 'Do you prefer solving math puzzles or verbal riddles?', options: ['Math Puzzles', 'Verbal Riddles', 'Visual Puzzles', 'Both equally!'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -220,7 +270,12 @@ export const defaultQuizzes = [
       { id: 'q11-7', type: 'fill_blanks', question: 'A group of lions is called a ____.', acceptedAnswers: ['Pride', 'pride'], timeLimit: 20, points: 1000 },
       { id: 'q11-8', type: 'multiple_choice', question: 'Which bird is famous for being flightless and native to Antarctica?', options: ['Ostrich', 'Penguin', 'Emu', 'Kiwi'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q11-9', type: 'ordering', question: 'Order these animals by maximum land running speed from SLOWEST to FASTEST:', options: ['Cheetah', 'Giant Tortoise', 'Domestic Dog', 'Usain Bolt (Human)'], correctOrder: ['Giant Tortoise', 'Usain Bolt (Human)', 'Domestic Dog', 'Cheetah'], timeLimit: 30, points: 1000 },
-      { id: 'q11-10', type: 'poll', question: 'Which animal group is your favorite?', options: ['Felines / Big Cats', 'Marine Mammals', 'Birds of Prey', 'Reptiles & Amphibians'], timeLimit: 15, points: 500 }
+      { id: 'q11-10', type: 'multiple_choice', question: 'Which animal has the strongest bite force in the animal kingdom?', options: ['Grizzly Bear', 'Nile Crocodile', 'Hippopotamus', 'Great White Shark'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q11-11', type: 'true_false', question: 'Sharks are mammals.', options: ['True', 'False'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q11-12', type: 'type_answer', question: 'What is the largest species of shark in the ocean?', acceptedAnswers: ['Whale Shark', 'whale shark'], timeLimit: 15, points: 1000 },
+      { id: 'q11-13', type: 'multiple_choice', question: 'What color is a polar bear\'s skin under its white fur?', options: ['White', 'Pink', 'Black', 'Gray'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q11-14', type: 'slider', question: 'What is the average lifespan of a domesticated dog in years?', min: 5, max: 25, targetValue: 12, tolerance: 2, timeLimit: 15, points: 1000 },
+      { id: 'q11-15', type: 'poll', question: 'Which animal group is your favorite?', options: ['Felines / Big Cats', 'Marine Mammals', 'Birds of Prey', 'Reptiles & Amphibians'], timeLimit: 15, points: 500 }
     ]
   },
   {
@@ -240,7 +295,12 @@ export const defaultQuizzes = [
       { id: 'q12-7', type: 'fill_blanks', question: 'The legendary 24-hour endurance sports car race in France is 24 Hours of Le ____.', acceptedAnswers: ['Mans', 'mans'], timeLimit: 20, points: 1000 },
       { id: 'q12-8', type: 'multiple_choice', question: 'What does EV stand for in modern automotive technology?', options: ['Engine Vehicle', 'Electric Vehicle', 'Efficient Velocity', 'Enhanced Valve'], correctAnswer: 1, timeLimit: 15, points: 1000 },
       { id: 'q12-9', type: 'ordering', question: 'Order these car engines by cylinder count from FEWEST to MOST:', options: ['V8 Engine', 'Inline-4 Engine', 'W16 Quad-Turbo Engine', 'V12 Engine'], correctOrder: ['Inline-4 Engine', 'V8 Engine', 'V12 Engine', 'W16 Quad-Turbo Engine'], timeLimit: 30, points: 1000 },
-      { id: 'q12-10', type: 'poll', question: 'What type of engine powertrain do you prefer?', options: ['V8 Internal Combustion', 'Electric (EV)', 'Hybrid Twin-Turbo', 'Manual Transmission Classic'], timeLimit: 15, points: 500 }
+      { id: 'q12-10', type: 'multiple_choice', question: 'Which iconic British sports car brand is driven by James Bond 007?', options: ['Jaguar', 'Bentley', 'Aston Martin', 'Lotus'], correctAnswer: 2, timeLimit: 15, points: 1000 },
+      { id: 'q12-11', type: 'true_false', question: 'The Ford Mustang was first introduced in 1964.', options: ['True', 'False'], correctAnswer: 0, timeLimit: 15, points: 1000 },
+      { id: 'q12-12', type: 'type_answer', question: 'Which Japanese supercar is nicknamed "Godzilla"?', acceptedAnswers: ['Nissan GT-R', 'Nissan GTR', 'GTR', 'gtr'], timeLimit: 15, points: 1000 },
+      { id: 'q12-13', type: 'multiple_choice', question: 'What type of door opening mechanism does the Lamborghini Countach famously feature?', options: ['Gullwing doors', 'Scissor doors', 'Suicide doors', 'Sliding doors'], correctAnswer: 1, timeLimit: 15, points: 1000 },
+      { id: 'q12-14', type: 'slider', question: 'What is the top speed in mph of the Bugatti Chiron Super Sport 300+?', min: 250, max: 350, targetValue: 304, tolerance: 5, timeLimit: 20, points: 1000 },
+      { id: 'q12-15', type: 'poll', question: 'What type of engine powertrain do you prefer?', options: ['V8 Internal Combustion', 'Electric (EV)', 'Hybrid Twin-Turbo', 'Manual Transmission Classic'], timeLimit: 15, points: 500 }
     ]
   }
 ];
